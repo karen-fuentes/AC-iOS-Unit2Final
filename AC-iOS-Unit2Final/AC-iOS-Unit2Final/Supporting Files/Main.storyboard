@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1dd-S0-Joy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Crayon Table View Controller-->
+        <scene sceneID="zKj-ho-Cin">
+            <objects>
+                <tableViewController id="4FS-PQ-6xS" customClass="CrayonTableViewController" customModule="AC_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P31-xY-gfc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="crayonCell" id="pqJ-t7-kzH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pqJ-t7-kzH" id="5Wg-Se-Pp6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qen-JV-e8g" kind="show" identifier="CrayonDetailSegue" id="Mqv-Ej-OFV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4FS-PQ-6xS" id="miu-Zh-Tuu"/>
+                            <outlet property="delegate" destination="4FS-PQ-6xS" id="Xtf-r1-pwg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="omF-by-EIO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9QJ-AB-IxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.79999999999995" y="179.46026986506749"/>
+        </scene>
+        <!--Crayon Detail View Controller-->
+        <scene sceneID="nSv-X6-hRc">
+            <objects>
+                <viewController id="Qen-JV-e8g" customClass="CrayonDetailViewController" customModule="AC_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PAu-dT-VKM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-h0-Mlo">
+                                <rect key="frame" x="166" y="323.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="krh-xE-ng7">
+                                <rect key="frame" x="10" y="354" width="355" height="90"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="ow3-pf-aZJ">
+                                        <rect key="frame" x="-2" y="0.0" width="359" height="31"/>
+                                        <connections>
+                                            <action selector="sliderDidSlide:" destination="Qen-JV-e8g" eventType="valueChanged" id="3Md-ny-q3d"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-v7-Npd">
+                                        <rect key="frame" x="-2" y="30" width="359" height="31"/>
+                                        <connections>
+                                            <action selector="sliderDidSlide:" destination="Qen-JV-e8g" eventType="valueChanged" id="hSp-ll-h7P"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Ubo-nk-IBi">
+                                        <rect key="frame" x="-2" y="60" width="359" height="31"/>
+                                        <connections>
+                                            <action selector="sliderDidSlide:" destination="Qen-JV-e8g" eventType="valueChanged" id="ov3-yy-XqT"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPs-jn-0Oj">
+                                <rect key="frame" x="10" y="627" width="355" height="30"/>
+                                <state key="normal" title="Reset Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonWasPressed:" destination="Qen-JV-e8g" eventType="touchUpInside" id="WXf-Tl-pV6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bGb-h0-Mlo" firstAttribute="centerY" secondItem="PAu-dT-VKM" secondAttribute="centerY" id="8Xb-eO-BR4"/>
+                            <constraint firstItem="lga-If-PrA" firstAttribute="bottom" secondItem="cPs-jn-0Oj" secondAttribute="bottom" constant="10" id="DKG-lV-vLd"/>
+                            <constraint firstItem="lga-If-PrA" firstAttribute="trailing" secondItem="krh-xE-ng7" secondAttribute="trailing" constant="10" id="KzV-LF-rF4"/>
+                            <constraint firstItem="bGb-h0-Mlo" firstAttribute="centerX" secondItem="PAu-dT-VKM" secondAttribute="centerX" id="LAB-sR-Oq7"/>
+                            <constraint firstItem="cPs-jn-0Oj" firstAttribute="leading" secondItem="lga-If-PrA" secondAttribute="leading" constant="10" id="UxO-J6-2gB"/>
+                            <constraint firstItem="krh-xE-ng7" firstAttribute="leading" secondItem="lga-If-PrA" secondAttribute="leading" constant="10" id="ZuI-Dl-1sT"/>
+                            <constraint firstItem="lga-If-PrA" firstAttribute="trailing" secondItem="cPs-jn-0Oj" secondAttribute="trailing" constant="10" id="aCz-bK-5au"/>
+                            <constraint firstItem="krh-xE-ng7" firstAttribute="top" secondItem="bGb-h0-Mlo" secondAttribute="bottom" constant="10" id="sLe-6K-QGd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lga-If-PrA"/>
+                    </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="LmC-v7-Npd" id="5u2-t0-g8S"/>
+                        <outlet property="crayonNameLabel" destination="bGb-h0-Mlo" id="t6L-iP-gfX"/>
+                        <outlet property="greenSlider" destination="Ubo-nk-IBi" id="LfQ-Mj-zzL"/>
+                        <outlet property="redSlider" destination="ow3-pf-aZJ" id="Hfy-a6-gtz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2n3-X8-7J8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400.8" y="178.56071964017991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Da7-9W-wM9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1dd-S0-Joy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TPS-f2-5Yo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4FS-PQ-6xS" kind="relationship" relationship="rootViewController" id="Kak-8U-d1Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgO-bm-ndF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-134" y="179"/>
+        </scene>
+    </scenes>
+</document>
